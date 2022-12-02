@@ -1,0 +1,26 @@
+[
+        {
+                "country_name": "japan",
+                "Cases": "24,911,367",
+                "Deaths": "49,826",
+                "Recovered": "20,713,863"
+        },
+        {
+                "country_name": "us",
+                "Cases": "100,743,392",
+                "Deaths": "1,106,378",
+                "Recovered": "98,191,251"
+        },
+        {
+                "country_name": "germany",
+                "Cases": "36,530,020",
+                "Deaths": "158,109",
+                "Recovered": "35,853,000"
+        },
+        {
+                "country_name": "china",
+                "Cases": "327,964",
+                "Deaths": "5,233",
+                "Recovered": "283,983"
+        }
+]
