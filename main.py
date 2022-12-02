@@ -11,7 +11,7 @@ from urllib.request import urlopen
 
 #function can accept the website worldometers.info and country as parameters
 #it then joins them to create a new link to hyperlink to specific page of that country.
-#need to scrape the death toll and total population from the page.
+#need to scrape the death toll and total population from the page
 def scrape_country (name, website):
         
     combined = website + "country/" + name
