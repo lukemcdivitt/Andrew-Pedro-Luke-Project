@@ -7,6 +7,8 @@ from urllib.request import urlopen
 import json
 
 # scrape country
+# accepts a list input of countries to be scraped
+# website is the base website to be scraped
 def scrape_country(countries, website):
 
     # initialize dictionary
@@ -42,11 +44,9 @@ def scrape_country(countries, website):
         counters = soup.find_all('div', attrs={'class': 'maincounter-number'})
         
         # find the population
-        classes = ['rts-nr-int rts-nr-10e6', 'rts-nr-int rts-nr-10e3', 'rts-nr-int rts-nr-10e0']
         holder = pop_soup.find_all('div', attrs={'class': 'col-md-8 country-pop-description'})
         pop_string = holder[0].contents[0].contents[3].contents[2].contents[0].replace(" ","")
         population = float(''.join(pop_string.replace(",","")))
-
 
         # loop through the conatiners to find the counters
         counts = []
@@ -55,13 +55,11 @@ def scrape_country(countries, website):
             count = float(count.replace(",",""))
             counts.append(count)
 
-        # normalize the data
-
-
         # convert into a dictionary
         country_info = {'Country Name': country, 'Cases': counts[0], 'Cases-Normalized': counts[0]/population, 
         'Deaths': counts[1], 'Deaths-Normalized': counts[1]/population,
-        'Recovered': counts[2], 'Recovered-Normalized': counts[2]/population}
+        'Recovered': counts[2], 'Recovered-Normalized': counts[2]/population,
+        'Population': population}
 
         # add to the large dictionary
         all_countries.append(country_info)

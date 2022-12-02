@@ -1,12 +1,13 @@
 [
         {
                 "Country Name": "japan",
-                "Cases": 24911367.0,
-                "Cases-Normalized": 0.19696445333017343,
-                "Deaths": 49826.0,
-                "Deaths-Normalized": 0.00039395472964728196,
-                "Recovered": 20713863.0,
-                "Recovered-Normalized": 0.16377642793151842
+                "Cases": 25021295.0,
+                "Cases-Normalized": 0.19783361110965936,
+                "Deaths": 50013.0,
+                "Deaths-Normalized": 0.00039543326564142237,
+                "Recovered": 20725942.0,
+                "Recovered-Normalized": 0.16387193186880838,
+                "Population": 126476461.0
         },
         {
                 "Country Name": "us",
@@ -15,7 +16,8 @@
                 "Deaths": 1106378.0,
                 "Deaths-Normalized": 0.00334250495172016,
                 "Recovered": 98191251.0,
-                "Recovered-Normalized": 0.29664792926386563
+                "Recovered-Normalized": 0.29664792926386563,
+                "Population": 331002651.0
         },
         {
                 "Country Name": "germany",
@@ -24,7 +26,8 @@
                 "Deaths": 158109.0,
                 "Deaths-Normalized": 0.0018871038557722673,
                 "Recovered": 35853000.0,
-                "Recovered-Normalized": 0.4279220951432436
+                "Recovered-Normalized": 0.4279220951432436,
+                "Population": 83783942.0
         },
         {
                 "Country Name": "china",
@@ -33,6 +36,7 @@
                 "Deaths": 5233.0,
                 "Deaths-Normalized": 3.6357351189896554e-06,
                 "Recovered": 283983.0,
-                "Recovered-Normalized": 0.00019730307018842716
+                "Recovered-Normalized": 0.00019730307018842716,
+                "Population": 1439323776.0
         }
 ]
