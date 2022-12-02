@@ -1,26 +1,38 @@
 [
         {
-                "country_name": "japan",
-                "Cases": "24,911,367",
-                "Deaths": "49,826",
-                "Recovered": "20,713,863"
+                "Country Name": "japan",
+                "Cases": 24911367.0,
+                "Cases-Normalized": 0.19696445333017343,
+                "Deaths": 49826.0,
+                "Deaths-Normalized": 0.00039395472964728196,
+                "Recovered": 20713863.0,
+                "Recovered-Normalized": 0.16377642793151842
         },
         {
-                "country_name": "us",
-                "Cases": "100,743,392",
-                "Deaths": "1,106,378",
-                "Recovered": "98,191,251"
+                "Country Name": "us",
+                "Cases": 100743392.0,
+                "Cases-Normalized": 0.30435826328170407,
+                "Deaths": 1106378.0,
+                "Deaths-Normalized": 0.00334250495172016,
+                "Recovered": 98191251.0,
+                "Recovered-Normalized": 0.29664792926386563
         },
         {
-                "country_name": "germany",
-                "Cases": "36,530,020",
-                "Deaths": "158,109",
-                "Recovered": "35,853,000"
+                "Country Name": "germany",
+                "Cases": 36530020.0,
+                "Cases-Normalized": 0.43600264117436727,
+                "Deaths": 158109.0,
+                "Deaths-Normalized": 0.0018871038557722673,
+                "Recovered": 35853000.0,
+                "Recovered-Normalized": 0.4279220951432436
         },
         {
-                "country_name": "china",
-                "Cases": "327,964",
-                "Deaths": "5,233",
-                "Recovered": "283,983"
+                "Country Name": "china",
+                "Cases": 327964.0,
+                "Cases-Normalized": 0.00022785978073080896,
+                "Deaths": 5233.0,
+                "Deaths-Normalized": 3.6357351189896554e-06,
+                "Recovered": 283983.0,
+                "Recovered-Normalized": 0.00019730307018842716
         }
 ]
