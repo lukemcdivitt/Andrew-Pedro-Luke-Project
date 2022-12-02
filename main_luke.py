@@ -4,7 +4,8 @@
 import ScrapeWebsite as SW
 
 # initialize test cases
-website = 'https://www.worldometers.info/coronavirus'
+# website one is 'https://www.worldometers.info/coronavirus'
+website = 0
 country = ['japan', 'us', 'germany', 'china']
 
 # run the test case
