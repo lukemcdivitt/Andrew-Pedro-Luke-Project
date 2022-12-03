@@ -127,7 +127,7 @@ def scrape_country(countries, website, filename):
     elif website == 3:
 
         # begin 3rd method (2nd website)
-        
+        print('3rd')
 
     # place into json
     with open(filename, 'w', encoding='latin-1') as f:
