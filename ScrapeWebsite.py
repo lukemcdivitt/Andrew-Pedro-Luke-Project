@@ -126,8 +126,26 @@ def scrape_country(countries, website, filename):
 
     elif website == 3:
 
-        # begin 3rd method (2nd website)
-        print('3rd')
+        # setup the link
+        link = 'https://ourworldindata.org/grapher/total-covid-cases-deaths-per-million?tab=table&time=2019-12-31..2022-11-22'
+
+        # establish connection with website
+        try:
+            page = urlopen(link)
+        except:
+            print("Error connecting to the URL")
+
+        # get response object
+        response = requests.get(link)
+
+        # create the parsed tree with soup
+        soup = bs4.BeautifulSoup(response.text, "html.parser")
+
+        # find all the div's
+        rows = soup.find_all('td',attrs={'class': "entity sorted"})
+
+        # test stop
+        print('stop')
 
     # place into json
     with open(filename, 'w', encoding='latin-1') as f:
