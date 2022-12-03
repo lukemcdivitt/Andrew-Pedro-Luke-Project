@@ -9,7 +9,7 @@ import json
 # scrape country
 # accepts a list input of countries to be scraped
 # website is the base website to be scraped
-def scrape_country(countries, website):
+def scrape_country(countries, website, filename):
 
     # initialize dictionary
     all_countries = []
@@ -58,6 +58,9 @@ def scrape_country(countries, website):
                 count = float(count.replace(",",""))
                 counts.append(count)
 
+            # normaliztaion number
+            norm = 1000000.0
+
             # convert into a dictionary
             country_info = {'Country Name': country, 'Cases': counts[0], 'Cases-Normalized': counts[0]/population, 
             'Deaths': counts[1], 'Deaths-Normalized': counts[1]/population,
@@ -67,13 +70,67 @@ def scrape_country(countries, website):
             # add to the large dictionary
             all_countries.append(country_info)
 
-    else:
+    elif website == 2:
 
-        print('other method')
-        return 0
+        # setup the link
+        link = 'https://www.worldometers.info/coronavirus/#countries'
+
+        # establish connection with website
+        try:
+            page = urlopen(link)
+        except:
+            print("Error connecting to the URL")
+
+        # get response object
+        response = requests.get(link)
+
+        # create the parsed tree with soup
+        soup = bs4.BeautifulSoup(response.text, "html.parser")
+
+        # find all the div's
+        rows = soup.find_all('tr', attrs={'style': ""})
+
+        # loop through the rows and record the values
+        table = []
+        for row in rows:
+            info = []
+            for idx in range(len(row)):
+                if hasattr(row.contents[idx], 'contents'):
+                    if row.contents[idx] != '\n':
+                        if len(row.contents[idx].contents) > 0:
+                            info.append(row.contents[idx].contents[0])
+                        else:
+                            info.append('NA')
+            table.append(info)
+
+        # fix the data
+        for idx in range(len(table)):
+            for idx_cell in range(len(table[idx])):
+                if hasattr(table[idx][idx_cell],'contents'):
+                    table[idx][idx_cell] = table[idx][idx_cell].contents[0]
+
+        # declare the variables
+        variables = ['Country', 'Total Cases', 'New Cases', 'Total Deaths',
+        'New Deaths', 'Total Recovered', 'New Recovered', 'Active Cases', 
+        'Serious, Critical', 'Tot Cases/ 1M pop', 'Deaths/ 1M pop', 'Total Tests',
+        'Tests/ 1M pop', 'Population', 'Continent', '1 Case every X ppl', '1 Death every X ppl',
+        '1 Test every X ppl', 'New Cases/ 1M pop', 'New Deaths/ 1M pop', 
+        'Active Cases/ 1M pop']
+
+        # set up the dictionary
+        for idx in range(2,len(table)):
+            country_dict = {}
+            for idx_cell in range(1,len(table[idx])):
+                country_dict.update({variables[idx_cell-1]: table[idx][idx_cell]})
+            all_countries.append(country_dict)
+
+    elif website == 3:
+
+        # begin 3rd method (2nd website)
+        
 
     # place into json
-    with open('covid.json', 'w', encoding='latin-1') as f:
+    with open(filename, 'w', encoding='latin-1') as f:
         json.dump(all_countries,f,indent=8,ensure_ascii=False)
     print("Mission Success!")
 

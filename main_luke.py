@@ -4,10 +4,13 @@
 import ScrapeWebsite as SW
 
 # initialize test cases
-# website one is 'https://www.worldometers.info/coronavirus'
+# website = 1 is https://www.worldometers.info/coronavirus (finds limited information for particular countries)
+# website = 2 returns information from all countries in https://www.worldometers.info/coronavirus/#countries
+
 website = 0
 country = ['japan', 'us', 'germany', 'china']
+filename = 'test.json'
 
 # run the test case
-SW.scrape_country(country, website)
+SW.scrape_country(country, website, filename)
 
