@@ -1,42 +1,164 @@
 [
         {
-                "Country Name": "japan",
-                "Cases": 25130886.0,
-                "Cases-Normalized": 198700.10436171203,
-                "Deaths": 50193.0,
-                "Deaths-Normalized": 396.8564553684025,
-                "Recovered": 20741641.0,
-                "Recovered-Normalized": 163996.05773282982,
-                "Population": 126476461.0
+                "Country": "United States of America",
+                "Cases - Newly reported in the last 7 days": "288,901",
+                "Deaths - Cumulative Total": "1,071,245",
+                "Deaths - Newly reported in the last 7 days": "1,488",
+                "Total vaccine doses administered per 100 population": "195.04",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "68.16",
+                "Persons Boosted per 100 population": "33.98"
         },
         {
-                "Country Name": "us",
-                "Cases": 100796300.0,
-                "Cases-Normalized": 304518.1049018245,
-                "Deaths": 1106640.0,
-                "Deaths-Normalized": 3343.296486166209,
-                "Recovered": 98257582.0,
-                "Recovered-Normalized": 296848.32342928875,
-                "Population": 331002651.0
+                "Country": "India",
+                "Cases - Newly reported in the last 7 days": "2,083",
+                "Deaths - Cumulative Total": "530,624",
+                "Deaths - Newly reported in the last 7 days": "20",
+                "Total vaccine doses administered per 100 population": "159.36",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "68.9",
+                "Persons Boosted per 100 population": "16.04"
         },
         {
-                "Country Name": "germany",
-                "Cases": 36557861.0,
-                "Cases-Normalized": 436334.936353317,
-                "Deaths": 158198.0,
-                "Deaths-Normalized": 1888.1661118308327,
-                "Recovered": 35862800.0,
-                "Recovered-Normalized": 428039.0626642991,
-                "Population": 83783942.0
+                "Country": "France",
+                "Cases - Newly reported in the last 7 days": "370,785",
+                "Deaths - Cumulative Total": "155,407",
+                "Deaths - Newly reported in the last 7 days": "454",
+                "Total vaccine doses administered per 100 population": "227.4",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "77.48",
+                "Persons Boosted per 100 population": "60.47"
         },
         {
-                "Country Name": "china",
-                "Cases": 336165.0,
-                "Cases-Normalized": 233.55759531342585,
-                "Deaths": 5235.0,
-                "Deaths-Normalized": 3.637124660407194,
-                "Recovered": 290702.0,
-                "Recovered-Normalized": 201.97123458064797,
-                "Population": 1439323776.0
+                "Country": "Germany",
+                "Cases - Newly reported in the last 7 days": "170,922",
+                "Deaths - Cumulative Total": "158,109",
+                "Deaths - Newly reported in the last 7 days": "74",
+                "Total vaccine doses administered per 100 population": "226.9",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "78.04",
+                "Persons Boosted per 100 population": "62.46"
+        },
+        {
+                "Country": "Brazil",
+                "Cases - Newly reported in the last 7 days": "184,123",
+                "Deaths - Cumulative Total": "689,801",
+                "Deaths - Newly reported in the last 7 days": "529",
+                "Total vaccine doses administered per 100 population": "231.79",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "79.18",
+                "Persons Boosted per 100 population": "49.88"
+        },
+        {
+                "Country": "Republic of Korea",
+                "Cases - Newly reported in the last 7 days": "370,960",
+                "Deaths - Cumulative Total": "30,621",
+                "Deaths - Newly reported in the last 7 days": "343",
+                "Total vaccine doses administered per 100 population": "257.01",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "87.17",
+                "Persons Boosted per 100 population": "65.63"
+        },
+        {
+                "Country": "Japan",
+                "Cases - Newly reported in the last 7 days": "782,453",
+                "Deaths - Cumulative Total": "49,826",
+                "Deaths - Newly reported in the last 7 days": "1,054",
+                "Total vaccine doses administered per 100 population": "271.49",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "81.42",
+                "Persons Boosted per 100 population": "66.47"
+        },
+        {
+                "Country": "Italy",
+                "Cases - Newly reported in the last 7 days": "NA",
+                "Deaths - Cumulative Total": "181,098",
+                "Deaths - Newly reported in the last 7 days": "NA",
+                "Total vaccine doses administered per 100 population": "248.9",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "82.95",
+                "Persons Boosted per 100 population": "75.04"
+        },
+        {
+                "Country": "The United Kingdom",
+                "Cases - Newly reported in the last 7 days": "21,167",
+                "Deaths - Cumulative Total": "197,253",
+                "Deaths - Newly reported in the last 7 days": "150",
+                "Total vaccine doses administered per 100 population": "222.8",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "74.59",
+                "Persons Boosted per 100 population": "NA"
+        },
+        {
+                "Country": "Russian Federation",
+                "Cases - Newly reported in the last 7 days": "41,576",
+                "Deaths - Cumulative Total": "392,117",
+                "Deaths - Newly reported in the last 7 days": "381",
+                "Total vaccine doses administered per 100 population": "124.1",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "53.37",
+                "Persons Boosted per 100 population": "NA"
+        },
+        {
+                "Country": "Türkiye",
+                "Cases - Newly reported in the last 7 days": "NA",
+                "Deaths - Cumulative Total": "101,203",
+                "Deaths - Newly reported in the last 7 days": "NA",
+                "Total vaccine doses administered per 100 population": "NA",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "63.94",
+                "Persons Boosted per 100 population": "NA"
+        },
+        {
+                "Country": "Spain",
+                "Cases - Newly reported in the last 7 days": "21,783",
+                "Deaths - Cumulative Total": "115,901",
+                "Deaths - Newly reported in the last 7 days": "NA",
+                "Total vaccine doses administered per 100 population": "229.6",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "79.2",
+                "Persons Boosted per 100 population": "55.35"
+        },
+        {
+                "Country": "Viet Nam",
+                "Cases - Newly reported in the last 7 days": "3,316",
+                "Deaths - Cumulative Total": "43,176",
+                "Deaths - Newly reported in the last 7 days": "6",
+                "Total vaccine doses administered per 100 population": "270.23",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "87.01",
+                "Persons Boosted per 100 population": "58.55"
+        },
+        {
+                "Country": "Australia",
+                "Cases - Newly reported in the last 7 days": "NA",
+                "Deaths - Cumulative Total": "15,361",
+                "Deaths - Newly reported in the last 7 days": "NA",
+                "Total vaccine doses administered per 100 population": "251.59",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "84.92",
+                "Persons Boosted per 100 population": "56.02"
+        },
+        {
+                "Country": "Argentina",
+                "Cases - Newly reported in the last 7 days": "3,323",
+                "Deaths - Cumulative Total": "130,025",
+                "Deaths - Newly reported in the last 7 days": "8",
+                "Total vaccine doses administered per 100 population": "242.62",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "83.72",
+                "Persons Boosted per 100 population": "68.17"
+        },
+        {
+                "Country": "China",
+                "Cases - Newly reported in the last 7 days": "144,712",
+                "Deaths - Cumulative Total": "30,388",
+                "Deaths - Newly reported in the last 7 days": "378",
+                "Total vaccine doses administered per 100 population": "235.44",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "86.82",
+                "Persons Boosted per 100 population": "54.61"
+        },
+        {
+                "Country": "Netherlands",
+                "Cases - Newly reported in the last 7 days": "3,518",
+                "Deaths - Cumulative Total": "22,910",
+                "Deaths - Newly reported in the last 7 days": "7",
+                "Total vaccine doses administered per 100 population": "207.4",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "68.69",
+                "Persons Boosted per 100 population": "54.1"
+        },
+        {
+                "Country": "Iran (Islamic Republic of)",
+                "Cases - Newly reported in the last 7 days": "214",
+                "Deaths - Cumulative Total": "144,633",
+                "Deaths - Newly reported in the last 7 days": "NA",
+                "Total vaccine doses administered per 100 population": "184.22",
+                "Persons fully vaccinated with last dose of primary series per 100 population": "69.65",
+                "Persons Boosted per 100 population": "37.05"
         }
 ]
