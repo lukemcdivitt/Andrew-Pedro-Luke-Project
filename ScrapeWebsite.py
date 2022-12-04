@@ -9,7 +9,7 @@ import json
 # scrape country
 # accepts a list input of countries to be scraped
 # website is the base website to be scraped
-def scrape_country(countries, website, filename):
+def scrape_country(website, filename, countries=None):
 
     # initialize dictionary
     all_countries = []
@@ -127,7 +127,7 @@ def scrape_country(countries, website, filename):
     elif website == 3:
 
         # setup the link
-        link = 'https://ourworldindata.org/grapher/total-covid-cases-deaths-per-million?tab=table&time=2019-12-31..2022-11-22'
+        link = 'https://covid19.who.int/table'
 
         # establish connection with website
         try:
@@ -142,10 +142,39 @@ def scrape_country(countries, website, filename):
         soup = bs4.BeautifulSoup(response.text, "html.parser")
 
         # find all the div's
-        rows = soup.find_all('td',attrs={'class': "entity sorted"})
+        rows = soup.find_all('div',attrs={'role': 'row'})
 
-        # test stop
-        print('stop')
+        # loop through the rows
+        table = []
+        for row in rows:
+            info = []
+            for cell in row:
+                info.append(check_contents(cell))
+            table.append(info)
+
+        # fix the data further
+        for idx in range(0,len(table)):
+            for idx_cell in range(0,len(table[idx])):
+                if hasattr(table[idx][idx_cell],'contents'):
+                    table[idx][idx_cell] = table[idx][idx_cell].contents[0]
+
+        # remove mistake NA
+        for idx in range(0,len(table)):
+            table[idx].pop(1)
+
+        # setup variareturn check_contents(object.contents[0])bles
+        variables = ['Country', 'Cases - Newly reported in the last 7 days',
+        'Deaths - Cumulative Total', 'Deaths - Newly reported in the last 7 days', 
+        'Total vaccine doses administered per 100 population',
+        'Persons fully vaccinated with last dose of primary series per 100 population',
+        'Persons Boosted per 100 population']
+
+        # set up the dictionary
+        for idx in range(3,len(table)):
+            country_dict = {}
+            for idx_cell in range(0,len(table[idx])):
+                country_dict.update({variables[idx_cell]: table[idx][idx_cell]})
+            all_countries.append(country_dict)
 
     # place into json
     with open(filename, 'w', encoding='latin-1') as f:
@@ -154,3 +183,15 @@ def scrape_country(countries, website, filename):
 
     # return
     return 1
+
+def check_contents(object):
+    if len(object.contents) > 0:
+        if hasattr(object.contents[0], 'contents'):
+            if len(object.contents) > 1:
+                return check_contents(object.contents[1])
+            else:
+                return check_contents(object.contents[0])
+        else:
+            return object.contents[0]
+    else:
+        return 'NA'
