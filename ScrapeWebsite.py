@@ -60,6 +60,7 @@ def scrape_country(website, filename, countries=None):
 
             # normaliztaion number
             norm = 1000000.0
+            population = population/norm
 
             # convert into a dictionary
             country_info = {'Country Name': country, 'Cases': counts[0], 'Cases-Normalized': counts[0]/population, 
