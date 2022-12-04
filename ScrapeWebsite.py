@@ -66,7 +66,7 @@ def scrape_country(website, filename, countries=None):
             country_info = {'Country Name': country, 'Cases': counts[0], 'Cases-Normalized': counts[0]/population, 
             'Deaths': counts[1], 'Deaths-Normalized': counts[1]/population,
             'Recovered': counts[2], 'Recovered-Normalized': counts[2]/population,
-            'Population': population}
+            'Population': population*norm}
 
             # add to the large dictionary
             all_countries.append(country_info)
