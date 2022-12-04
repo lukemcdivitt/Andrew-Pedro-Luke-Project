@@ -10,8 +10,17 @@ import ScrapeWebsite as SW
 
 website = 1
 country = ['japan', 'us', 'germany', 'china']
-filename = 'test3.json'
+filename = 'test1.json'
 
-# run the test case
+# run test case for website 1
 SW.scrape_country(website, filename, country)
 
+website = 2
+filename = 'test2.json'
+# run test case for website 2
+SW.scrape_country(website, filename, country)
+
+website = 3
+filename = 'test3.json'
+#creates data file for website 3
+SW.scrape_country(website, filename, country)
