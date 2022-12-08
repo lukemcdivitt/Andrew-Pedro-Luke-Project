@@ -16,11 +16,11 @@ filename = 'test1 2nd day.json'
 SW.scrape_country(website, filename, country)
 
 website = 2
-filename = 'test2 2nd day.json'
+filename = 'Web1 7DEC22.json'
 # run test case for website 2
 SW.scrape_country(website, filename, country)
 
 website = 3
-filename = 'test3 2nd day.json'
+filename = 'Web2 7DEC22.json'
 #creates data file for website 3
 SW.scrape_country(website, filename, country)
