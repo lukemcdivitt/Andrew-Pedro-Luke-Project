@@ -69,14 +69,6 @@ NewDeaths1Mpop = []
 ActiveCases1Mpop = []
 
 
-
-
-
-
-
-
-
-
 for i in range(0,len(day1site2)):
     Country += [day1site2[i]["Country"]]
     TotalCases += [day1site2[i]["Total Cases"]]
