@@ -1,0 +1,162 @@
+[
+        {
+                "Country Name": "us",
+                "Cases": 101213638.0,
+                "Cases-Normalized": 305778.93468291283,
+                "Deaths": 1109394.0,
+                "Deaths-Normalized": 3351.616661221242,
+                "Recovered": 98461586.0,
+                "Recovered-Normalized": 297464.6447771199,
+                "Population": 331002651.0
+        },
+        {
+                "Country Name": "india",
+                "Cases": 44675509.0,
+                "Cases-Normalized": 32373.454378552575,
+                "Deaths": 530653.0,
+                "Deaths-Normalized": 384.529937562481,
+                "Recovered": 44139558.0,
+                "Recovered-Normalized": 31985.085322754247,
+                "Population": 1380004385.0
+        },
+        {
+                "Country Name": "france",
+                "Cases": 38331430.0,
+                "Cases-Normalized": 587243.2693255921,
+                "Deaths": 159517.0,
+                "Deaths-Normalized": 2443.824417534396,
+                "Recovered": 15867601.0,
+                "Recovered-Normalized": 243094.03243223732,
+                "Population": 65273511.0
+        },
+        {
+                "Country Name": "germany",
+                "Cases": 36726061.0,
+                "Cases-Normalized": 438342.4809493924,
+                "Deaths": 158851.0,
+                "Deaths-Normalized": 1895.959968080757,
+                "Recovered": 36042800.0,
+                "Recovered-Normalized": 430187.4457040945,
+                "Population": 83783942.0
+        },
+        {
+                "Country Name": "brazil",
+                "Cases": 35563044.0,
+                "Cases-Normalized": 167308.7200836649,
+                "Deaths": 690739.0,
+                "Deaths-Normalized": 3249.627844058304,
+                "Recovered": 34354889.0,
+                "Recovered-Normalized": 161624.87404639428,
+                "Population": 212559417.0
+        },
+        {
+                "Country Name": "south-korea",
+                "Cases": 27611555.0,
+                "Cases-Normalized": 538560.4432760146,
+                "Deaths": 30975.0,
+                "Deaths-Normalized": 604.1640802365007,
+                "Recovered": 17120321.0,
+                "Recovered-Normalized": 333930.0400425714,
+                "Population": 51269185.0
+        },
+        {
+                "Country Name": "japan",
+                "Cases": 25687798.0,
+                "Cases-Normalized": 203103.3901241117,
+                "Deaths": 51062.0,
+                "Deaths-Normalized": 403.72729910587867,
+                "Recovered": 20794181.0,
+                "Recovered-Normalized": 164411.47100091612,
+                "Population": 126476461.0
+        },
+        {
+                "Country Name": "italy",
+                "Cases": 24488080.0,
+                "Cases-Normalized": 405017.2087095087,
+                "Deaths": 181733.0,
+                "Deaths-Normalized": 3005.747792003503,
+                "Recovered": 23799178.0,
+                "Recovered-Normalized": 393623.20946112345,
+                "Population": 60461826.0
+        },
+        {
+                "Country Name": "uk",
+                "Cases": 24024746.0,
+                "Cases-Normalized": 353898.33113040036,
+                "Deaths": 197253.0,
+                "Deaths-Normalized": 2905.650178797514,
+                "Recovered": 22954691.0,
+                "Recovered-Normalized": 338135.80532814044,
+                "Population": 67886011.0
+        },
+        {
+                "Country Name": "russia",
+                "Cases": 21650659.0,
+                "Cases-Normalized": 148358.78176602317,
+                "Deaths": 392506.0,
+                "Deaths-Normalized": 2689.60459798728,
+                "Recovered": 21049420.0,
+                "Recovered-Normalized": 144238.85702884902,
+                "Population": 145934462.0
+        },
+        {
+                "Country Name": "spain",
+                "Cases": 13614807.0,
+                "Cases-Normalized": 291196.0570104728,
+                "Deaths": 116108.0,
+                "Deaths-Normalized": 2483.339777594495,
+                "Recovered": 13403322.0,
+                "Recovered-Normalized": 286672.7759887984,
+                "Population": 46754778.0
+        },
+        {
+                "Country Name": "australia",
+                "Cases": 10853888.0,
+                "Cases-Normalized": 425644.60293231136,
+                "Deaths": 16441.0,
+                "Deaths-Normalized": 644.7480310106508,
+                "Recovered": 10546102.0,
+                "Recovered-Normalized": 413574.50880953023,
+                "Population": 25499884.0
+        },
+        {
+                "Country Name": "argentina",
+                "Cases": 9739856.0,
+                "Cases-Normalized": 215503.6884643241,
+                "Deaths": 130034.0,
+                "Deaths-Normalized": 2877.1274057614323,
+                "Recovered": 9064882.0,
+                "Recovered-Normalized": 200569.2390620415,
+                "Population": 45195774.0
+        },
+        {
+                "Country Name": "china",
+                "Cases": 357652.0,
+                "Cases-Normalized": 248.48613353275144,
+                "Deaths": 5235.0,
+                "Deaths-Normalized": 3.637124660407194,
+                "Recovered": 309259.0,
+                "Recovered-Normalized": 214.86409462327956,
+                "Population": 1439323776.0
+        },
+        {
+                "Country Name": "netherlands",
+                "Cases": 8547416.0,
+                "Cases-Normalized": 498831.6224363975,
+                "Deaths": 22926.0,
+                "Deaths-Normalized": 1337.9732279295695,
+                "Recovered": 8445834.0,
+                "Recovered-Normalized": 492903.24433120945,
+                "Population": 17134872.0
+        },
+        {
+                "Country Name": "iran",
+                "Cases": 7560048.0,
+                "Cases-Normalized": 90008.12675359214,
+                "Deaths": 144651.0,
+                "Deaths-Normalized": 1722.1802749180767,
+                "Recovered": 7335415.0,
+                "Recovered-Normalized": 87333.69987997445,
+                "Population": 83992949.0
+        }
+]
