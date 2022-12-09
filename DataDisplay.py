@@ -7,28 +7,69 @@ with open('Web1 7DEC22.json') as Web1:
     day1site1 = json.load(Web1)
 
 with open('Web2 7DEC22.json') as Web2:
-    day2site2 = json.load(Web2)
+    day1site2 = json.load(Web2)
 
 with open('Web2 7DEC22.json') as Web3:
-    day3site3 = json.load(Web3)
+    day1site3 = json.load(Web3)
 
 
 output_file('index.hdml')
 
-Countries = [day1site1[0]["Country Name"],day1site1[1]["Country Name"],day1site1[2]["Country Name"],day1site1[3]["Country Name"]]
-Cases = [day1site1[0]["Cases"],day1site1[1]["Cases"],day1site1[2]["Cases"],day1site1[3]["Cases"]]
-CasesNormalized = [day1site1[0]["Cases-Normalized"],day1site1[1]["Cases-Normalized"],day1site1[2]["Cases-Normalized"],day1site1[3]["Cases-Normalized"]]
-Deaths = [day1site1[0]["Deaths"],day1site1[1]["Deaths"],day1site1[2]["Deaths"],day1site1[3]["Deaths"]]
-DeathsNormalized = [day1site1[0]["Deaths-Normalized"],day1site1[1]["Deaths-Normalized"],day1site1[2]["Deaths-Normalized"],day1site1[3]["Deaths-Normalized"]]
-Recovered = [day1site1[0]["Recovered"],day1site1[1]["Recovered"],day1site1[2]["Recovered"],day1site1[3]["Recovered"]]
-RecoveredNormalized = [day1site1[0]["Recovered-Normalized"],day1site1[1]["Recovered-Normalized"],day1site1[2]["Recovered-Normalized"],day1site1[3]["Recovered-Normalized"]]
-Population = [day1site1[0]["Population"],day1site1[1]["Population"],day1site1[2]["Population"],day1site1[3]["Population"]]
+Countries1 = []
+Cases1 = []
+CasesNormalized1 = []
+Deaths1 = []
+DeathsNormalized1 = []
+Recovered1 = []
+RecoveredNormalized1 = []
+Population1 = []
 
-print(Countries)
-print(Cases)
-print(CasesNormalized)
-print(DeathsNormalized)
-print(Recovered)
-print(RecoveredNormalized)
-print(Population)
+for i in range(0,4):
+    Countries1 += [day1site1[i]["Country Name"]]
+    Cases1 += [day1site1[i]["Cases"]]
+    CasesNormalized1 += [day1site1[i]["Cases-Normalized"]]
+    Deaths1 += [day1site1[i]["Deaths"]]
+    DeathsNormalized1 += [day1site1[i]["Deaths-Normalized"]]
+    Recovered1 += [day1site1[i]["Recovered"]]
+    RecoveredNormalized1 += [day1site1[i]["Recovered-Normalized"]]
+    Population1 += [day1site1[i]["Population"]]
+
+print("Website 1 Information: ")
+print(Countries1)
+print(Cases1)
+print(CasesNormalized1)
+print(DeathsNormalized1)
+print(Recovered1)
+print(RecoveredNormalized1)
+print(Population1)
+
+Countries2 = []
+Cases2 = []
+CasesNormalized2 = []
+Deaths2 = []
+DeathsNormalized2 = []
+Recovered2 = []
+RecoveredNormalized2 = []
+Population2 = []
+
+for i in range(0,4):
+    Countries2 += [day1site2[i]["Country Name"]]
+    Cases2 += [day1site2[i]["Cases"]]
+    CasesNormalized2 += [day1site2[i]["Cases-Normalized"]]
+    Deaths2 += [day1site2[i]["Deaths"]]
+    DeathsNormalized2 += [day1site2[i]["Deaths-Normalized"]]
+    Recovered2 += [day1site2[i]["Recovered"]]
+    RecoveredNormalized2 += [day1site2[i]["Recovered-Normalized"]]
+    Population2 += [day1site2[i]["Population"]]
+
+
+print("/n")
+print("Website 2 Information: ")
+print(Countries2)
+print(Cases2)
+print(CasesNormalized2)
+print(DeathsNormalized2)
+print(Recovered2)
+print(RecoveredNormalized2)
+print(Population2)
 
