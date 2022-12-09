@@ -13,7 +13,7 @@ with open('Web2 7DEC22.json') as Web3:
     day1site3 = json.load(Web3)
 
 
-output_file('index.hdml')
+output_file('index.html')
 
 Countries1 = []
 Cases1 = []
@@ -24,7 +24,7 @@ Recovered1 = []
 RecoveredNormalized1 = []
 Population1 = []
 
-for i in range(0,4):
+for i in range(0,len(day1site1)):
     Countries1 += [day1site1[i]["Country Name"]]
     Cases1 += [day1site1[i]["Cases"]]
     CasesNormalized1 += [day1site1[i]["Cases-Normalized"]]
@@ -43,33 +43,91 @@ print(Recovered1)
 print(RecoveredNormalized1)
 print(Population1)
 
-Countries2 = []
-Cases2 = []
-CasesNormalized2 = []
-Deaths2 = []
-DeathsNormalized2 = []
-Recovered2 = []
-RecoveredNormalized2 = []
-Population2 = []
 
-for i in range(0,4):
-    Countries2 += [day1site2[i]["Country Name"]]
-    Cases2 += [day1site2[i]["Cases"]]
-    CasesNormalized2 += [day1site2[i]["Cases-Normalized"]]
-    Deaths2 += [day1site2[i]["Deaths"]]
-    DeathsNormalized2 += [day1site2[i]["Deaths-Normalized"]]
-    Recovered2 += [day1site2[i]["Recovered"]]
-    RecoveredNormalized2 += [day1site2[i]["Recovered-Normalized"]]
-    Population2 += [day1site2[i]["Population"]]
+
+
+Country = []
+TotalCases = []
+NewCases = []
+TotalDeaths = []
+NewDeaths= []
+TotalRecovered = []
+NewRecovered = []
+ActiveCases = []
+SeriousCritical = []
+TotCases1Mpop = []
+Deaths1Mpop = []
+TotalTests = []
+Tests1Mpop = []
+Population = []
+Continent = []
+CaseEveryXppl = []
+DeathEveryXppl = []
+TestEveryXppl = []
+NewCases1Mpop = []
+NewDeaths1Mpop = []
+ActiveCases1Mpop = []
+
+
+
+
+
+
+
+
+
+
+for i in range(0,len(day1site2)):
+    Country += [day1site2[i]["Country"]]
+    TotalCases += [day1site2[i]["Total Cases"]]
+    NewCases += [day1site2[i]["New Cases"]]
+    TotalDeaths += [day1site2[i]["New Cases"]]
+    NewDeaths += [day1site2[i]["New Deaths"]]
+    TotalRecovered += [day1site2[i]["Total Recovered"]]
+    NewRecovered += [day1site2[i]["New Recovered"]]
+    ActiveCases += [day1site2[i]["Active Cases"]]
+    SeriousCritical += [day1site2[i]["Serious, Critical"]]
+    TotCases1Mpop += [day1site2[i]["Tot Cases/ 1M pop"]]
+    Deaths1Mpop += [day1site2[i]["Deaths/ 1M pop"]]
+    TotalTests += [day1site2[i]["Total Tests"]]
+    Tests1Mpop += [day1site2[i]["Tests/ 1M pop"]]
+    Population += [day1site2[i]["Population"]]
+    Continent += [day1site2[i]["Continent"]]
+    CaseEveryXppl += [day1site2[i]["1 Case every X ppl"]]
+    DeathEveryXppl += [day1site2[i]["1 Death every X ppl"]]
+    TestEveryXppl += [day1site2[i]["1 Test every X ppl"]]
+    NewCases1Mpop += [day1site2[i]["New Cases/ 1M pop"]]
+    NewDeaths1Mpop += [day1site2[i]["New Deaths/ 1M pop"]]
+    ActiveCases1Mpop += [day1site2[i]["Active Cases/ 1M pop"]]
 
 
 print("/n")
 print("Website 2 Information: ")
-print(Countries2)
-print(Cases2)
-print(CasesNormalized2)
-print(DeathsNormalized2)
-print(Recovered2)
-print(RecoveredNormalized2)
-print(Population2)
+print(Country)
+print(TotalCases)
+print(NewCases)
+print(TotalDeaths)
+print(NewDeaths)
+print(TotalRecovered)
+print(NewRecovered)
+print(ActiveCases)
+print(SeriousCritical)
+print(TotCases1Mpop)
+print(TotalTests)
+print(Tests1Mpop)
+print(Population)
+print(Continent)
+print(CaseEveryXppl)
+print(DeathEveryXppl)
+print(TestEveryXppl)
+print(NewCases1Mpop)
+print(ActiveCases1Mpop)
+
+
+print(len(day1site1))
+
+p= figure(title='Total deaths')
+p.vbar(x=[1,2,3, 5], width=0.5, bottom=0,
+       top=Deaths1, color="firebrick")
+show(p)
 
