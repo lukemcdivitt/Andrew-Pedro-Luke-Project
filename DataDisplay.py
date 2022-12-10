@@ -1,14 +1,16 @@
 
-from bokeh.models import ColorBar, ColumnDataSource, FactorRange, CustomJS, Dropdown, CheckboxGroup
+from bokeh.models import ColorBar, ColumnDataSource, FactorRange, CustomJS, Dropdown, CheckboxGroup, HoverTool
 from bokeh.plotting import figure, show, output_file
 from bokeh.transform import linear_cmap
 from bokeh.io import show
 from bokeh.layouts import column, row
 from collections import OrderedDict
-
+from bokeh.palettes import Magma, Inferno, Plasma, Viridis, Cividis, Spectral6, Category20_16
+from matplotlib import style
 import pandas as pd
-
 import json
+import numpy as np
+from zmq import SRCFD
 
 with open('Web1 7DEC22.json') as Web1:
     day1site1 = json.load(Web1)
@@ -40,17 +42,6 @@ for i in range(0,len(day1site1)):
     Recovered1 += [day1site1[i]["Recovered"]]
     RecoveredNormalized1 += [day1site1[i]["Recovered-Normalized"]]
     Population1 += [day1site1[i]["Population"]]
-
-print("Website 1 Information: ")
-print(Countries1)
-print(Cases1)
-print(CasesNormalized1)
-print(DeathsNormalized1)
-print(Recovered1)
-print(RecoveredNormalized1)
-print(Population1)
-
-
 
 
 Country = []
@@ -99,29 +90,6 @@ for i in range(0,len(day1site2)):
     NewDeaths1Mpop += [day1site2[i]["New Deaths/ 1M pop"]]
     ActiveCases1Mpop += [day1site2[i]["Active Cases/ 1M pop"]]
 
-
-#print("/n")
-#print("Website 2 Information: ")
-#print(Country)
-#print(TotalCases)
-#print(NewCases)
-#print(TotalDeaths)
-#print(NewDeaths)
-#print(TotalRecovered)
-#print(NewRecovered)
-#print(ActiveCases)
-#print(SeriousCritical)
-#print(TotCases1Mpop)
-#print(TotalTests)
-#print(Tests1Mpop)
-#print(Population)
-#print(Continent)
-#print(CaseEveryXppl)
-#print(DeathEveryXppl)
-#print(TestEveryXppl)
-#print(NewCases1Mpop)
-#print(ActiveCases1Mpop)
-
 p= figure(x_range=Countries1, height=350, title="Total Deaths",
            toolbar_location=None, tools="")
 
@@ -130,23 +98,23 @@ p.vbar(x=Countries1, top=Deaths1, width=0.9)
 p.xgrid.grid_line_color = None
 p.y_range.start = 0
 
-#show(p)
-
-#menu = [("US"), ("India"), ("France"),("Germany"),("Brazil"),("South Korea"),("Japan"),("Italy"),("UK"),('Russia'),('Spain'),("Australia"),("Argentina"),("China"),("Netherlands"),("Iran")]
-
-#dropdown = Dropdown(label="Country", button_type="warning", menu=menu)
-#dropdown.js_on_event("menu_item_click", CustomJS(code="console.log('dropdown: ' + this.item, this.toString())"))
-
-#show(dropdown)
-
 LABELS = []
 
 for i in Countries1:
     LABELS += [i]
 
-checkbox_group = CheckboxGroup(labels=LABELS, active=[0, 1])
-checkbox_group.js_on_event('button_click', CustomJS(code="""
+country_selection = CheckboxGroup(labels=LABELS, active=[0, 1])
+country_selection.js_on_event('button_click', CustomJS(code="""
     console.log('checkbox_group: active=' + this.origin.active, this.toString())
 """))
 
-show(row(checkbox_group,p))
+# Select the country names from the selection values
+[country_selection.labels[i] for i in country_selection.active]
+
+country_selection.on_change('active',update)
+p.on_change('active',update)
+
+
+show(row(country_selection,p))
+
+
