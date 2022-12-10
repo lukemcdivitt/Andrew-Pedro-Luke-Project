@@ -1,6 +1,13 @@
-from bokeh.models import ColorBar, ColumnDataSource, FactorRange
+
+from bokeh.models import ColorBar, ColumnDataSource, FactorRange, CustomJS, Dropdown, CheckboxGroup
 from bokeh.plotting import figure, show, output_file
 from bokeh.transform import linear_cmap
+from bokeh.io import show
+from bokeh.layouts import column, row
+from collections import OrderedDict
+
+import pandas as pd
+
 import json
 
 with open('Web1 7DEC22.json') as Web1:
@@ -93,33 +100,53 @@ for i in range(0,len(day1site2)):
     ActiveCases1Mpop += [day1site2[i]["Active Cases/ 1M pop"]]
 
 
-print("/n")
-print("Website 2 Information: ")
-print(Country)
-print(TotalCases)
-print(NewCases)
-print(TotalDeaths)
-print(NewDeaths)
-print(TotalRecovered)
-print(NewRecovered)
-print(ActiveCases)
-print(SeriousCritical)
-print(TotCases1Mpop)
-print(TotalTests)
-print(Tests1Mpop)
-print(Population)
-print(Continent)
-print(CaseEveryXppl)
-print(DeathEveryXppl)
-print(TestEveryXppl)
-print(NewCases1Mpop)
-print(ActiveCases1Mpop)
+#print("/n")
+#print("Website 2 Information: ")
+#print(Country)
+#print(TotalCases)
+#print(NewCases)
+#print(TotalDeaths)
+#print(NewDeaths)
+#print(TotalRecovered)
+#print(NewRecovered)
+#print(ActiveCases)
+#print(SeriousCritical)
+#print(TotCases1Mpop)
+#print(TotalTests)
+#print(Tests1Mpop)
+#print(Population)
+#print(Continent)
+#print(CaseEveryXppl)
+#print(DeathEveryXppl)
+#print(TestEveryXppl)
+#print(NewCases1Mpop)
+#print(ActiveCases1Mpop)
 
+p= figure(x_range=Countries1, height=350, title="Total Deaths",
+           toolbar_location=None, tools="")
 
-print(len(day1site1))
+p.vbar(x=Countries1, top=Deaths1, width=0.9)
 
-p= figure(title='Total deaths')
-p.vbar(x=[1,2,3, 5], width=0.5, bottom=0,
-       top=Deaths1, color="firebrick")
-show(p)
+p.xgrid.grid_line_color = None
+p.y_range.start = 0
 
+#show(p)
+
+#menu = [("US"), ("India"), ("France"),("Germany"),("Brazil"),("South Korea"),("Japan"),("Italy"),("UK"),('Russia'),('Spain'),("Australia"),("Argentina"),("China"),("Netherlands"),("Iran")]
+
+#dropdown = Dropdown(label="Country", button_type="warning", menu=menu)
+#dropdown.js_on_event("menu_item_click", CustomJS(code="console.log('dropdown: ' + this.item, this.toString())"))
+
+#show(dropdown)
+
+LABELS = []
+
+for i in Countries1:
+    LABELS += [i]
+
+checkbox_group = CheckboxGroup(labels=LABELS, active=[0, 1])
+checkbox_group.js_on_event('button_click', CustomJS(code="""
+    console.log('checkbox_group: active=' + this.origin.active, this.toString())
+"""))
+
+show(row(checkbox_group,p))
