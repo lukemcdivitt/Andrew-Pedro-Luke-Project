@@ -103,10 +103,12 @@ LABELS = []
 for i in Countries1:
     LABELS += [i]
 
+update = CustomJS(code="""
+
+""")
+
 country_selection = CheckboxGroup(labels=LABELS, active=[0, 1])
-country_selection.js_on_event('button_click', CustomJS(code="""
-    console.log('checkbox_group: active=' + this.origin.active, this.toString())
-"""))
+country_selection.js_on_event('button_click', update)
 
 # Select the country names from the selection values
 [country_selection.labels[i] for i in country_selection.active]
