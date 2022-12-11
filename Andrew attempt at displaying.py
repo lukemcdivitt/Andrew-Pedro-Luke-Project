@@ -149,8 +149,8 @@ while i < daysreported:
     days.append(int(i+1))
     i+=1      
 
-x=[days]
-y=[dailydeathdata]
+x=days
+y=dailydeathdata
 dailydeaths = figure(title="daily deaths")
 dailydeaths.line(x,y, line_width=2)
 
