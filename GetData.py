@@ -83,6 +83,8 @@ def make_dataset(countries, dataframe, data_key):
         sub_dict['color'][idx] = Category20_16[idx]
 
     for idx in range(len(sub_dict['Value'])):
+        if sub_dict['Value'][idx] == 'NA':
+            sub_dict['Value'][idx] = 0
         try:
             sub_dict['Value'][idx] = int(sub_dict['Value'][idx])
         except:
@@ -104,7 +106,7 @@ def make_dataset_line(countries, dictionary, data_key):
 
     for idx in range(len(dictionary[keys[0]])):
         for country2 in countries:
-            if dictionary[keys[0]][idx] == country2:
+            if dictionary[keys[0]][idx] == country2 and check(sub_dict[keys[0]],country2) == True:
                 sub_dict[keys[0]].append(dictionary[keys[0]][idx])
                 sub_dict['Value'].append(dictionary[data_key][idx])
                 sub_dict['Dates'].append(dates)
@@ -114,4 +116,29 @@ def make_dataset_line(countries, dictionary, data_key):
                     sub_dict['Color'].append(Category20_16[color])
                 color +=1
 
+    sub_dict[keys[0]] = countries
+    if len(sub_dict[keys[0]]) < len(sub_dict['Value']):
+        sub_dict['Value'] = sub_dict['Value'][0:len(countries)]
+        sub_dict['Dates'] = sub_dict['Dates'][0:len(countries)]
+        sub_dict['Color'] = sub_dict['Color'][0:len(countries)]
+
+    for idx in range(len(sub_dict['Value'])):
+        for idx2 in range(len(sub_dict['Value'][idx])):
+            if sub_dict['Value'][idx][idx2] == 'NA':
+                sub_dict['Value'][idx][idx2] = 0
+            try:
+                sub_dict['Value'][idx][idx2] = int(sub_dict['Value'][idx][idx2])
+            except:
+                sub_dict['Value'][idx][idx2] = int(sub_dict['Value'][idx][idx2].replace(' ','').replace(',',''))
+
     return sub_dict
+
+# extra chekc funtion
+def check(list, value):
+
+    for l in list:
+
+        if list == l:
+            return False
+
+    return True
