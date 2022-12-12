@@ -1,6 +1,8 @@
 # import
 import pandas as pd
 
+from bokeh.palettes import Category20_16
+
 # create function to get the data
 def get_data():
 
@@ -28,6 +30,17 @@ def get_data():
     d2_keys = data2[0].keys()
     d3_keys = data3[0].keys()
 
+    for keys in d1_keys:
+        data1 = [data.rename(columns={keys:keys.replace('-','_')}) for data in data1]
+    for keys in d2_keys:
+        data2 = [data.rename(columns={keys:keys.replace('-','_')}) for data in data2]
+    for keys in d3_keys:
+        data3 = [data.rename(columns={keys:keys.replace('-','_')}) for data in data3]
+
+    d1_keys = data1[0].keys()
+    d2_keys = data2[0].keys()
+    d3_keys = data3[0].keys()
+
     # record all of the countries for each website for each day
     country_1 = []
     country_2 = []
@@ -40,3 +53,44 @@ def get_data():
         country_3.append(data3[idx][d3_keys[0]])
 
     return data1, data2, data3, d1_keys, d2_keys, d3_keys
+
+# function to create a new dataset
+def make_dataset(countries, dataframe, data_key):
+
+    # get info on the dataframe
+    keys = dataframe.keys()
+
+    # set up new dataframe
+    interested = pd.DataFrame(columns=[keys[0], data_key])
+
+    # get the desired coutries
+    for idx in range(len(dataframe)):
+        for idx2 in range(len(countries)):
+            for idx3 in range(len(dataframe.loc[idx])):
+                if dataframe.loc[idx][idx3] == countries[idx2]:
+                    interested = interested.append(dataframe.loc[idx,[keys[0],data_key]])
+
+    interested = interested.rename(columns={data_key: 'Value'})
+    # convert to dictinary
+    sub_dict = {}
+    for key in [keys[0], 'Value']:
+        sub_dict[key] = interested[key].to_list()
+    sub_dict['left'] = [-1] * len(sub_dict[keys[0]])
+    sub_dict['right'] = [1] * len(sub_dict[keys[0]])
+    sub_dict['color'] = [1] * len(sub_dict[keys[0]])
+
+    for idx in range(len(sub_dict[keys[0]])):
+        sub_dict['color'][idx] = Category20_16[idx]
+
+    for idx in range(len(sub_dict['Value'])):
+        sub_dict['Value'][idx] = int(sub_dict['Value'][idx])
+
+    return sub_dict
+
+# line graph
+def make_dataset(countries, dictionary, data_key):
+
+    sub_dict = {}
+    keys = dictionary.keys().to_list()
+
+    # for idx in range(len())
