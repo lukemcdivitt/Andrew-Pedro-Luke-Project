@@ -83,14 +83,35 @@ def make_dataset(countries, dataframe, data_key):
         sub_dict['color'][idx] = Category20_16[idx]
 
     for idx in range(len(sub_dict['Value'])):
-        sub_dict['Value'][idx] = int(sub_dict['Value'][idx])
+        try:
+            sub_dict['Value'][idx] = int(sub_dict['Value'][idx])
+        except:
+            sub_dict['Value'][idx] = int(sub_dict['Value'][idx].replace(' ','').replace(',',''))
 
     return sub_dict
 
 # line graph
-def make_dataset(countries, dictionary, data_key):
+def make_dataset_line(countries, dictionary, data_key):
 
     sub_dict = {}
-    keys = dictionary.keys().to_list()
+    keys = list(dictionary.keys())
+    dates = [8, 9, 10]
+    sub_dict[keys[0]] = []
+    sub_dict['Value'] = []
+    sub_dict['Dates'] = []
+    sub_dict['Color'] = []
+    color = 0
 
-    # for idx in range(len())
+    for idx in range(len(dictionary[keys[0]])):
+        for country2 in countries:
+            if dictionary[keys[0]][idx] == country2:
+                sub_dict[keys[0]].append(dictionary[keys[0]][idx])
+                sub_dict['Value'].append(dictionary[data_key][idx])
+                sub_dict['Dates'].append(dates)
+                if idx > len(Category20_16):
+                    sub_dict['Color'].append(Category20_16[color])
+                else:
+                    sub_dict['Color'].append(Category20_16[color])
+                color +=1
+
+    return sub_dict
